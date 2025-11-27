@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>CSU BAYFRONT TECH</title>
+</head>
+  
+<body>
+     <nav>
+        <div class="nav-links">
+            <a href="index.html">About the college</a>
+            <a href="#">Programs/classes</a>
+            <a href="support.html">Support</a>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+        </div> 
+     </nav>
+    <div class="button-container">
+        <button onclick="toggleMode()" id="modeBtn">🌑 Dark Mode</button>
+        <button onclick="openModal()">Show Modal</button>
+        <button onclick="showMessage()">Students click here!</button>
+    </div>
+
+    <h2>Welcome to CSU Bayfront Tech</h2>
+    <h1>Who are we?</h1>
+    <p>California State University, Bayfront Tech (CSU Bayfront Tech) is a forward-thinking public institution in the heart of Oakland, dedicated to shaping the next generation of innovators, leaders, and problem-solvers...</p>
+
+   
+
+    <p id="demo"></p>
+
+    <div id="modalBackdrop" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);">
+        <div style="background:#191d1f;padding:2em 1.5em;border-radius:20px;max-width:350px;margin:100px auto;">
+            <p>This is a modal pop-up!</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+  
+    <script>
+        function showMessage() {
+            document.getElementById("demo").innerHTML ="Hello, Welcome to Bayfront Tech student portal if you are looking for support on classes please refer to the programs/classes page! for any further help refer to 'support' page";
+        }
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById("modeBtn");
+            if (document.body.classList.contains('light-mode')) {
+                btn.innerText = "☀️ Light Mode";
+            } else {
+                btn.innerText = "🌑 Dark Mode";
+            }
+        }
+        function openModal() {
+            document.getElementById('modalBackdrop').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modalBackdrop').style.display = 'none';
+        }
+    </script>
+
+
+</body>
+</html>
